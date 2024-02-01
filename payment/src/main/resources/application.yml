@@ -7,3 +7,7 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+#        namespace: bc8e1fbe-b195-49bf-a754-939d384515e7 # 默认public注册
+#        group: MY_GROUP
+  profiles:
+    active: dev

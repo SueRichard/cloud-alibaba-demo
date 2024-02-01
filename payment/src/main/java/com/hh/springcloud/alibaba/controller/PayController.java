@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.annotation.RequestScope;
 
 import java.util.HashMap;
 
@@ -16,10 +17,14 @@ import java.util.HashMap;
  * @time 2024/02/01  Thu  13:51
  */
 @RestController
+@RequestScope
 public class PayController {
 
     @Value("${server.port}")
     private String serverPort;
+
+    @Value("${config.info}")
+    private String configInfo;
 
     public static HashMap<Long, Payment> map = new HashMap<>();
 
@@ -37,5 +42,9 @@ public class PayController {
 
     }
 
+    @GetMapping("/config/info")
+    public String getConfigInfo(){
+        return configInfo;
+    }
 
 }

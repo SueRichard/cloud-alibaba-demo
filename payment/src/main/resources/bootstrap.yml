@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848 # nacos config address
+        file-extension: yaml
+#        group: MY_GROUP
+#        namespace: 011a1118-b542-4d68-b290-26f75f3a8759
