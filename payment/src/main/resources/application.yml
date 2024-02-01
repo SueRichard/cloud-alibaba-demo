@@ -1,0 +1,9 @@
+server:
+  port: ${port:9001}
+spring:
+  application:
+    name: pay-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
