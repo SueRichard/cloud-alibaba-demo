@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @version 1.0
  * @time 2024/02/01  Thu  14:41
  */
-@FeignClient(value = "pay-service")
+@FeignClient(value = "pay-service", fallback = PayFallbackService.class)
 public interface PayService {
     @GetMapping("/pay/{id}")
     CommonResult<Payment> pay(@PathVariable("id") Long id);
